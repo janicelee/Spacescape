@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5B67B806DDECB6997257B62F /* Pods_Spacescape.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1ECF17F7E2C3488A2F6A892F /* Pods_Spacescape.framework */; };
 		F7D64CC7265906770043BED2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7D64CC6265906770043BED2 /* AppDelegate.swift */; };
 		F7D64CC9265906770043BED2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7D64CC8265906770043BED2 /* SceneDelegate.swift */; };
 		F7D64CD02659067A0043BED2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F7D64CCF2659067A0043BED2 /* Assets.xcassets */; };
@@ -20,6 +21,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1549AFD85A78914E78445A8C /* Pods-Spacescape.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Spacescape.release.xcconfig"; path = "Target Support Files/Pods-Spacescape/Pods-Spacescape.release.xcconfig"; sourceTree = "<group>"; };
+		1ECF17F7E2C3488A2F6A892F /* Pods_Spacescape.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Spacescape.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B894CC2CCB4EC78DA5A473AE /* Pods-Spacescape.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Spacescape.debug.xcconfig"; path = "Target Support Files/Pods-Spacescape/Pods-Spacescape.debug.xcconfig"; sourceTree = "<group>"; };
 		F7D64CC3265906770043BED2 /* Spacescape.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Spacescape.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F7D64CC6265906770043BED2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F7D64CC8265906770043BED2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -39,17 +43,38 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5B67B806DDECB6997257B62F /* Pods_Spacescape.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1338551A7F1923EAD40D2D3A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B894CC2CCB4EC78DA5A473AE /* Pods-Spacescape.debug.xcconfig */,
+				1549AFD85A78914E78445A8C /* Pods-Spacescape.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		D3B82D81ED64BECCD16E1F04 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1ECF17F7E2C3488A2F6A892F /* Pods_Spacescape.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		F7D64CBA265906770043BED2 = {
 			isa = PBXGroup;
 			children = (
 				F7D64CC5265906770043BED2 /* Spacescape */,
 				F7D64CC4265906770043BED2 /* Products */,
+				1338551A7F1923EAD40D2D3A /* Pods */,
+				D3B82D81ED64BECCD16E1F04 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -134,9 +159,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F7D64CD72659067A0043BED2 /* Build configuration list for PBXNativeTarget "Spacescape" */;
 			buildPhases = (
+				8B01D79E394D824BC212277E /* [CP] Check Pods Manifest.lock */,
 				F7D64CBF265906770043BED2 /* Sources */,
 				F7D64CC0265906770043BED2 /* Frameworks */,
 				F7D64CC1265906770043BED2 /* Resources */,
+				6A4DF4F36CABB3A2E10734DA /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -190,6 +217,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		6A4DF4F36CABB3A2E10734DA /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Spacescape/Pods-Spacescape-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Spacescape/Pods-Spacescape-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Spacescape/Pods-Spacescape-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8B01D79E394D824BC212277E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Spacescape-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		F7D64CBF265906770043BED2 /* Sources */ = {
@@ -339,6 +408,7 @@
 		};
 		F7D64CD82659067A0043BED2 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B894CC2CCB4EC78DA5A473AE /* Pods-Spacescape.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -358,6 +428,7 @@
 		};
 		F7D64CD92659067A0043BED2 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1549AFD85A78914E78445A8C /* Pods-Spacescape.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
