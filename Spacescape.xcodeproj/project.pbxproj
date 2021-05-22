@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -15,9 +15,10 @@
 		F7D64CE426590A0E0043BED2 /* NASAClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7D64CE326590A0E0043BED2 /* NASAClient.swift */; };
 		F7D64CE826590A2A0043BED2 /* NASAClientError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7D64CE726590A2A0043BED2 /* NASAClientError.swift */; };
 		F7D64CEB26590A580043BED2 /* SearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7D64CEA26590A580043BED2 /* SearchResult.swift */; };
-		F7D64CF726590C330043BED2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7D64CF626590C330043BED2 /* ViewController.swift */; };
 		F7D64CFB26590CC70043BED2 /* CustomImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7D64CFA26590CC70043BED2 /* CustomImageView.swift */; };
 		F7D64CFE26590CE70043BED2 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7D64CFD26590CE70043BED2 /* Constants.swift */; };
+		F7ED2BF82659B72800590B72 /* SearchResultsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7ED2BF72659B72800590B72 /* SearchResultsTableViewController.swift */; };
+		F7ED2BFB2659B85E00590B72 /* SearchResultTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7ED2BFA2659B85E00590B72 /* SearchResultTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,9 +34,10 @@
 		F7D64CE326590A0E0043BED2 /* NASAClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NASAClient.swift; sourceTree = "<group>"; };
 		F7D64CE726590A2A0043BED2 /* NASAClientError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NASAClientError.swift; sourceTree = "<group>"; };
 		F7D64CEA26590A580043BED2 /* SearchResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResult.swift; sourceTree = "<group>"; };
-		F7D64CF626590C330043BED2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		F7D64CFA26590CC70043BED2 /* CustomImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomImageView.swift; sourceTree = "<group>"; };
 		F7D64CFD26590CE70043BED2 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		F7ED2BF72659B72800590B72 /* SearchResultsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsTableViewController.swift; sourceTree = "<group>"; };
+		F7ED2BFA2659B85E00590B72 /* SearchResultTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,7 +58,6 @@
 				B894CC2CCB4EC78DA5A473AE /* Pods-Spacescape.debug.xcconfig */,
 				1549AFD85A78914E78445A8C /* Pods-Spacescape.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -112,6 +113,7 @@
 			isa = PBXGroup;
 			children = (
 				F7D64CFA26590CC70043BED2 /* CustomImageView.swift */,
+				F7ED2BFA2659B85E00590B72 /* SearchResultTableViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -119,7 +121,7 @@
 		F7D64CDE265908CC0043BED2 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				F7D64CF626590C330043BED2 /* ViewController.swift */,
+				F7ED2BF72659B72800590B72 /* SearchResultsTableViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -265,7 +267,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F7D64CF726590C330043BED2 /* ViewController.swift in Sources */,
+				F7ED2BF82659B72800590B72 /* SearchResultsTableViewController.swift in Sources */,
 				F7D64CE426590A0E0043BED2 /* NASAClient.swift in Sources */,
 				F7D64CC7265906770043BED2 /* AppDelegate.swift in Sources */,
 				F7D64CFB26590CC70043BED2 /* CustomImageView.swift in Sources */,
@@ -273,6 +275,7 @@
 				F7D64CEB26590A580043BED2 /* SearchResult.swift in Sources */,
 				F7D64CE826590A2A0043BED2 /* NASAClientError.swift in Sources */,
 				F7D64CFE26590CE70043BED2 /* Constants.swift in Sources */,
+				F7ED2BFB2659B85E00590B72 /* SearchResultTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
