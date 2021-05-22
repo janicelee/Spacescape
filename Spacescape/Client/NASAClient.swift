@@ -60,6 +60,8 @@ class NASAClient {
             case .success(let data):
                 do {
                     let decoder = JSONDecoder()
+                    decoder.keyDecodingStrategy = .convertFromSnakeCase
+                    decoder.dateDecodingStrategy = .iso8601
                     let searchResult = try decoder.decode(SearchResult.self, from: data)
                     completed(.success(searchResult))
                 } catch {

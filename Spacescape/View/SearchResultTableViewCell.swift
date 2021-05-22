@@ -49,7 +49,7 @@ class SearchResultTableViewCell: UITableViewCell {
         let item = searchItem.data[0]
         
         titleLabel.text = item.title
-        dateLabel.text = item.date_created
+        dateLabel.text = item.dateCreated.convertToDisplayFormat()
     }
 
 }
