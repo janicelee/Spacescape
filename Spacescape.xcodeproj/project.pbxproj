@@ -12,6 +12,9 @@
 		F7D64CCB265906770043BED2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7D64CCA265906770043BED2 /* ViewController.swift */; };
 		F7D64CD02659067A0043BED2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F7D64CCF2659067A0043BED2 /* Assets.xcassets */; };
 		F7D64CD32659067A0043BED2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F7D64CD12659067A0043BED2 /* LaunchScreen.storyboard */; };
+		F7D64CE426590A0E0043BED2 /* NASAClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7D64CE326590A0E0043BED2 /* NASAClient.swift */; };
+		F7D64CE826590A2A0043BED2 /* NASAClientError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7D64CE726590A2A0043BED2 /* NASAClientError.swift */; };
+		F7D64CEB26590A580043BED2 /* SearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7D64CEA26590A580043BED2 /* SearchResult.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +25,9 @@
 		F7D64CCF2659067A0043BED2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F7D64CD22659067A0043BED2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F7D64CD42659067A0043BED2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F7D64CE326590A0E0043BED2 /* NASAClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NASAClient.swift; sourceTree = "<group>"; };
+		F7D64CE726590A2A0043BED2 /* NASAClientError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NASAClientError.swift; sourceTree = "<group>"; };
+		F7D64CEA26590A580043BED2 /* SearchResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResult.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,9 +61,10 @@
 			isa = PBXGroup;
 			children = (
 				F7D64CE0265908D80043BED2 /* Utilities */,
+				F7D64CE22659099D0043BED2 /* Client */,
+				F7D64CDC265908C50043BED2 /* Model */,
 				F7D64CDE265908CC0043BED2 /* Controller */,
 				F7D64CDD265908C80043BED2 /* View */,
-				F7D64CDC265908C50043BED2 /* Model */,
 				F7D64CDF265908D30043BED2 /* Support */,
 				F7D64CD42659067A0043BED2 /* Info.plist */,
 			);
@@ -67,6 +74,7 @@
 		F7D64CDC265908C50043BED2 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				F7D64CEA26590A580043BED2 /* SearchResult.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -100,8 +108,17 @@
 		F7D64CE0265908D80043BED2 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				F7D64CE726590A2A0043BED2 /* NASAClientError.swift */,
 			);
 			path = Utilities;
+			sourceTree = "<group>";
+		};
+		F7D64CE22659099D0043BED2 /* Client */ = {
+			isa = PBXGroup;
+			children = (
+				F7D64CE326590A0E0043BED2 /* NASAClient.swift */,
+			);
+			path = Client;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -174,8 +191,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				F7D64CCB265906770043BED2 /* ViewController.swift in Sources */,
+				F7D64CE426590A0E0043BED2 /* NASAClient.swift in Sources */,
 				F7D64CC7265906770043BED2 /* AppDelegate.swift in Sources */,
 				F7D64CC9265906770043BED2 /* SceneDelegate.swift in Sources */,
+				F7D64CEB26590A580043BED2 /* SearchResult.swift in Sources */,
+				F7D64CE826590A2A0043BED2 /* NASAClientError.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
