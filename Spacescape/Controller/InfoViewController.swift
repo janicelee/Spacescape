@@ -50,7 +50,7 @@ class InfoViewController: UIViewController {
     }
     
     private func configure() {
-        [imageView, titlelabel, dateLabel, descriptionLabel].forEach { view.addSubview($0) }
+        [imageView, titlelabel, dateLabel, descriptionLabel].forEach(view.addSubview)
         
         imageView.layer.cornerRadius = 0
         

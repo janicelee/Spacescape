@@ -25,7 +25,7 @@ class SearchResultTableViewCell: UITableViewCell {
     }
     
     private func configure() {
-        [thumbnailImage, titleLabel, dateLabel].forEach { addSubview($0) }
+        [thumbnailImage, titleLabel, dateLabel].forEach(addSubview)
 
         thumbnailImage.snp.makeConstraints { make in
             make.top.leading.equalToSuperview().inset(Layout.largePadding)
