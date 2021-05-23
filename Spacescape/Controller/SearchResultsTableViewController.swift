@@ -49,4 +49,11 @@ class SearchResultsTableViewController: UITableViewController {
         return cell
     }
     
+    // MARK: - UITableViewDelegate
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let searchItem = searchItems[indexPath.row]
+        let destination = InfoViewController(searchItem: searchItem)
+        navigationController?.pushViewController(destination, animated: true)
+    }
 }

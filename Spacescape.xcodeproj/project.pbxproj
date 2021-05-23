@@ -20,6 +20,7 @@
 		F7ED2BF82659B72800590B72 /* SearchResultsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7ED2BF72659B72800590B72 /* SearchResultsTableViewController.swift */; };
 		F7ED2BFB2659B85E00590B72 /* SearchResultTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7ED2BFA2659B85E00590B72 /* SearchResultTableViewCell.swift */; };
 		F7ED2C0F2659CDE300590B72 /* Date+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7ED2C0E2659CDE300590B72 /* Date+Ext.swift */; };
+		F7ED2C162659FD0100590B72 /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7ED2C152659FD0100590B72 /* InfoViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,7 @@
 		F7ED2BF72659B72800590B72 /* SearchResultsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsTableViewController.swift; sourceTree = "<group>"; };
 		F7ED2BFA2659B85E00590B72 /* SearchResultTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultTableViewCell.swift; sourceTree = "<group>"; };
 		F7ED2C0E2659CDE300590B72 /* Date+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Ext.swift"; sourceTree = "<group>"; };
+		F7ED2C152659FD0100590B72 /* InfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,6 +127,7 @@
 			isa = PBXGroup;
 			children = (
 				F7ED2BF72659B72800590B72 /* SearchResultsTableViewController.swift */,
+				F7ED2C152659FD0100590B72 /* InfoViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -279,6 +282,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F7ED2BF82659B72800590B72 /* SearchResultsTableViewController.swift in Sources */,
+				F7ED2C162659FD0100590B72 /* InfoViewController.swift in Sources */,
 				F7D64CE426590A0E0043BED2 /* NASAClient.swift in Sources */,
 				F7D64CC7265906770043BED2 /* AppDelegate.swift in Sources */,
 				F7D64CFB26590CC70043BED2 /* SearchResultImage.swift in Sources */,
