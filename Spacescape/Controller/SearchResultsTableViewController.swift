@@ -7,9 +7,14 @@
 
 import UIKit
 
-class SearchResultsTableViewController: UITableViewController {
+protocol SearchResultsTableViewControllerDelegate: class {
+    func didSelectSearchItem(searchItem: SearchItem)
+}
 
-    private var searchItems = [SearchItem]() {
+class SearchResultsTableViewController: UITableViewController {
+    
+    weak var delegate: SearchResultsTableViewControllerDelegate?
+    var searchItems = [SearchItem]() {
         didSet {
             DispatchQueue.main.async {
                 self.tableView.reloadData()
@@ -22,18 +27,6 @@ class SearchResultsTableViewController: UITableViewController {
         super.viewDidLoad()
         tableView.rowHeight = rowHeight
         tableView.register(SearchResultTableViewCell.self, forCellReuseIdentifier: SearchResultTableViewCell.reuseID)
-        
-        NASAClient.shared.search(for: "moon", page: 1) { [weak self] result in
-            guard let self = self else { return }
-            
-            switch result {
-            case .success(let searchResult):
-                self.searchItems = searchResult.collection.items
-            case .failure(let error):
-                // TODO: handle error case
-                print(error.rawValue)
-            }
-        }
     }
 
     // MARK: - UITableViewDataSource
@@ -53,7 +46,6 @@ class SearchResultsTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let searchItem = searchItems[indexPath.row]
-        let destination = InfoViewController(searchItem: searchItem)
-        navigationController?.pushViewController(destination, animated: true)
+        delegate?.didSelectSearchItem(searchItem: searchItem)
     }
 }

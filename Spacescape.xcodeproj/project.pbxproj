@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		5B67B806DDECB6997257B62F /* Pods_Spacescape.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1ECF17F7E2C3488A2F6A892F /* Pods_Spacescape.framework */; };
+		F74D8A6F265A41B900A3777C /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F74D8A6E265A41B900A3777C /* SearchViewController.swift */; };
 		F7D64CC7265906770043BED2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7D64CC6265906770043BED2 /* AppDelegate.swift */; };
 		F7D64CC9265906770043BED2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7D64CC8265906770043BED2 /* SceneDelegate.swift */; };
 		F7D64CD02659067A0043BED2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F7D64CCF2659067A0043BED2 /* Assets.xcassets */; };
@@ -27,6 +28,7 @@
 		1549AFD85A78914E78445A8C /* Pods-Spacescape.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Spacescape.release.xcconfig"; path = "Target Support Files/Pods-Spacescape/Pods-Spacescape.release.xcconfig"; sourceTree = "<group>"; };
 		1ECF17F7E2C3488A2F6A892F /* Pods_Spacescape.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Spacescape.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B894CC2CCB4EC78DA5A473AE /* Pods-Spacescape.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Spacescape.debug.xcconfig"; path = "Target Support Files/Pods-Spacescape/Pods-Spacescape.debug.xcconfig"; sourceTree = "<group>"; };
+		F74D8A6E265A41B900A3777C /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		F7D64CC3265906770043BED2 /* Spacescape.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Spacescape.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F7D64CC6265906770043BED2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F7D64CC8265906770043BED2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -126,6 +128,7 @@
 		F7D64CDE265908CC0043BED2 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				F74D8A6E265A41B900A3777C /* SearchViewController.swift */,
 				F7ED2BF72659B72800590B72 /* SearchResultsTableViewController.swift */,
 				F7ED2C152659FD0100590B72 /* InfoViewController.swift */,
 			);
@@ -287,6 +290,7 @@
 				F7D64CC7265906770043BED2 /* AppDelegate.swift in Sources */,
 				F7D64CFB26590CC70043BED2 /* SearchResultImage.swift in Sources */,
 				F7D64CC9265906770043BED2 /* SceneDelegate.swift in Sources */,
+				F74D8A6F265A41B900A3777C /* SearchViewController.swift in Sources */,
 				F7D64CEB26590A580043BED2 /* SearchResult.swift in Sources */,
 				F7D64CE826590A2A0043BED2 /* NASAClientError.swift in Sources */,
 				F7D64CFE26590CE70043BED2 /* Constants.swift in Sources */,
