@@ -9,8 +9,10 @@ import Foundation
 
 extension Date {
     func convertToDisplayFormat() -> String {
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "MMM d, yyyy"
-        return dateFormatter.string(from: self)
+        let formatter = DateFormatter()
+        formatter.locale = Locale.current
+        formatter.dateStyle = .long
+        formatter.timeStyle = .none
+        return formatter.string(from: self)
     }
 }
