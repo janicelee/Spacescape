@@ -26,7 +26,7 @@ struct SearchLink: Codable {
 }
 
 struct SearchData: Codable {
-    let title: String
     let description: String
     let dateCreated: Date
+    let title: String
 }
