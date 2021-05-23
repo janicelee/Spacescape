@@ -16,9 +16,9 @@ struct SearchCollection: Codable {
 }
 
 struct SearchItem: Codable {
-    let links: [SearchLink]
-    let data: [SearchData]
     let href: String
+    let data: [SearchData]
+    let links: [SearchLink]
 }
 
 struct SearchLink: Codable {

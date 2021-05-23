@@ -5,15 +5,17 @@
 //  Created by Janice Lee on 2021-05-22.
 //
 
-import Foundation
+import UIKit
 
 class NASAClient {
     static let shared = NASAClient()
+    
+    private let cache = NSCache<NSString, UIImage>()
     private let baseURL = "https://images-api.nasa.gov"
     
     private init() {}
     
-    private func sendRequest(urlComponents: URLComponents, completed: @escaping (Result<Foundation.Data, NASAClientError>) -> ()) {
+    private func sendRequest(urlComponents: URLComponents, completed: @escaping (Result<Data, NASAClientError>) -> ()) {
         guard let url = urlComponents.url else {
             completed(.failure(.invalidURL))
             return
@@ -69,6 +71,34 @@ class NASAClient {
                 }
             case .failure(let error):
                 completed(.failure(error))
+            }
+        }
+    }
+    
+    // Downloads image from given url
+    // Completion handler has void return since images have placeholders
+    
+    func downloadImage(from urlString: String, completed: @escaping (UIImage) -> ()) {
+        let cacheKey = NSString(string: urlString)
+        
+        if let image = cache.object(forKey: cacheKey) {
+            completed(image)
+            return
+        }
+        
+        let urlComps = URLComponents(string: urlString)!
+        
+        sendRequest(urlComponents: urlComps) { [weak self] result in
+            guard let self = self else { return }
+            
+            switch result {
+            case .success(let data):
+                guard let image = UIImage(data: data) else { return }
+                self.cache.setObject(image, forKey: cacheKey)
+                completed(image)
+            case .failure(let error):
+                // TODO: handle error
+                print("Failed to download image from: \(urlString), error: \(error.rawValue)")
             }
         }
     }

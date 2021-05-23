@@ -11,7 +11,7 @@ import SnapKit
 class SearchResultTableViewCell: UITableViewCell {
     static let reuseID = "ResultCell"
     
-    private let thumbnailImage = CustomImageView(frame: .zero)
+    private let thumbnailImage = SearchResultImage(frame: .zero)
     private let titleLabel = UILabel()
     private let dateLabel = UILabel()
     
@@ -46,10 +46,12 @@ class SearchResultTableViewCell: UITableViewCell {
     }
 
     func set(_ searchItem: SearchItem) {
-        let item = searchItem.data[0]
+        let data = searchItem.data[0]
+        let thumbnailURL = searchItem.links[0].href
         
-        titleLabel.text = item.title
-        dateLabel.text = item.dateCreated.convertToDisplayFormat()
+        titleLabel.text = data.title
+        dateLabel.text = data.dateCreated.convertToDisplayFormat()
+        thumbnailImage.setImage(from: thumbnailURL)
     }
 
 }

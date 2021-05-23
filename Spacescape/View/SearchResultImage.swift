@@ -1,5 +1,5 @@
 //
-//  CustomImageView.swift
+//  SearchResultImage.swift
 //  Spacescape
 //
 //  Created by Janice Lee on 2021-05-22.
@@ -20,13 +20,15 @@ class SearchResultImage: UIImageView {
     
     private func configure() {
         layer.cornerRadius = Layout.imageCornerRadius
-        contentMode = .scaleAspectFit
+        contentMode = .scaleAspectFill
         clipsToBounds = true
         image = Images.placeholder
     }
     
     func setImage(from urlString: String) {
-        NASAClient.shared.downloadImage(from: urlString) { image in
+        NASAClient.shared.downloadImage(from: urlString) { [weak self] image in
+            guard let self = self else { return }
+            
             DispatchQueue.main.async {
                 self.image = image
             }

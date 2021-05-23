@@ -15,7 +15,7 @@
 		F7D64CE426590A0E0043BED2 /* NASAClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7D64CE326590A0E0043BED2 /* NASAClient.swift */; };
 		F7D64CE826590A2A0043BED2 /* NASAClientError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7D64CE726590A2A0043BED2 /* NASAClientError.swift */; };
 		F7D64CEB26590A580043BED2 /* SearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7D64CEA26590A580043BED2 /* SearchResult.swift */; };
-		F7D64CFB26590CC70043BED2 /* CustomImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7D64CFA26590CC70043BED2 /* CustomImageView.swift */; };
+		F7D64CFB26590CC70043BED2 /* SearchResultImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7D64CFA26590CC70043BED2 /* SearchResultImage.swift */; };
 		F7D64CFE26590CE70043BED2 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7D64CFD26590CE70043BED2 /* Constants.swift */; };
 		F7ED2BF82659B72800590B72 /* SearchResultsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7ED2BF72659B72800590B72 /* SearchResultsTableViewController.swift */; };
 		F7ED2BFB2659B85E00590B72 /* SearchResultTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7ED2BFA2659B85E00590B72 /* SearchResultTableViewCell.swift */; };
@@ -35,7 +35,7 @@
 		F7D64CE326590A0E0043BED2 /* NASAClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NASAClient.swift; sourceTree = "<group>"; };
 		F7D64CE726590A2A0043BED2 /* NASAClientError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NASAClientError.swift; sourceTree = "<group>"; };
 		F7D64CEA26590A580043BED2 /* SearchResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResult.swift; sourceTree = "<group>"; };
-		F7D64CFA26590CC70043BED2 /* CustomImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomImageView.swift; sourceTree = "<group>"; };
+		F7D64CFA26590CC70043BED2 /* SearchResultImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultImage.swift; sourceTree = "<group>"; };
 		F7D64CFD26590CE70043BED2 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		F7ED2BF72659B72800590B72 /* SearchResultsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsTableViewController.swift; sourceTree = "<group>"; };
 		F7ED2BFA2659B85E00590B72 /* SearchResultTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultTableViewCell.swift; sourceTree = "<group>"; };
@@ -115,7 +115,7 @@
 		F7D64CDD265908C80043BED2 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				F7D64CFA26590CC70043BED2 /* CustomImageView.swift */,
+				F7D64CFA26590CC70043BED2 /* SearchResultImage.swift */,
 				F7ED2BFA2659B85E00590B72 /* SearchResultTableViewCell.swift */,
 			);
 			path = View;
@@ -281,7 +281,7 @@
 				F7ED2BF82659B72800590B72 /* SearchResultsTableViewController.swift in Sources */,
 				F7D64CE426590A0E0043BED2 /* NASAClient.swift in Sources */,
 				F7D64CC7265906770043BED2 /* AppDelegate.swift in Sources */,
-				F7D64CFB26590CC70043BED2 /* CustomImageView.swift in Sources */,
+				F7D64CFB26590CC70043BED2 /* SearchResultImage.swift in Sources */,
 				F7D64CC9265906770043BED2 /* SceneDelegate.swift in Sources */,
 				F7D64CEB26590A580043BED2 /* SearchResult.swift in Sources */,
 				F7D64CE826590A2A0043BED2 /* NASAClientError.swift in Sources */,
