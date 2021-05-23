@@ -41,7 +41,7 @@ class SearchViewController: UIViewController {
             
             switch result {
             case .success(let searchResult):
-                self.resultsTableViewController.searchItems = searchResult.collection.items
+                self.resultsTableViewController.setSearchItems(searchResult.collection.items) 
             case .failure(let error):
                 // TODO: handle error
                 print(error.rawValue)

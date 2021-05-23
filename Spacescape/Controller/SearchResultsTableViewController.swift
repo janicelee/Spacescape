@@ -13,20 +13,24 @@ protocol SearchResultsTableViewControllerDelegate: class {
 
 class SearchResultsTableViewController: UITableViewController {
     
-    weak var delegate: SearchResultsTableViewControllerDelegate?
-    var searchItems = [SearchItem]() {
+    private var searchItems = [SearchItem]() {
         didSet {
             DispatchQueue.main.async {
                 self.tableView.reloadData()
             }
         }
     }
+    weak var delegate: SearchResultsTableViewControllerDelegate?
     private let rowHeight: CGFloat = 134
 
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.rowHeight = rowHeight
         tableView.register(SearchResultTableViewCell.self, forCellReuseIdentifier: SearchResultTableViewCell.reuseID)
+    }
+    
+    func setSearchItems(_ items: [SearchItem]) {
+        self.searchItems = items
     }
     
     // Clears list of SearchItem results
