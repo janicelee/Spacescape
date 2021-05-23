@@ -86,7 +86,9 @@ class NASAClient {
             return
         }
         
-        let urlComps = URLComponents(string: urlString)!
+        var urlComps = URLComponents(string: urlString)!
+        // Force all urls to use https
+        urlComps.scheme = "https"
         
         sendRequest(urlComponents: urlComps) { [weak self] result in
             guard let self = self else { return }
@@ -99,6 +101,27 @@ class NASAClient {
             case .failure(let error):
                 // TODO: handle error
                 print("Failed to download image from: \(urlString), error: \(error.rawValue)")
+            }
+        }
+    }
+    
+    // Retrieves image URLs for given collection 
+    
+    func getImageURLs(from urlString: String, completed: @escaping (Result<[String], NASAClientError>) -> ()) {
+        let urlComps = URLComponents(string: urlString)!
+        
+        sendRequest(urlComponents: urlComps) { result in
+            switch result {
+            case .success(let data):
+                do {
+                    let decoder = JSONDecoder()
+                    let imageLinks = try decoder.decode([String].self, from: data)
+                    completed(.success(imageLinks))
+                } catch {
+                    completed(.failure(.unableToParse))
+                }
+            case .failure(let error):
+                completed(.failure(error))
             }
         }
     }
