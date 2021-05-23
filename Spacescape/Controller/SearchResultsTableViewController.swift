@@ -28,6 +28,11 @@ class SearchResultsTableViewController: UITableViewController {
         tableView.rowHeight = rowHeight
         tableView.register(SearchResultTableViewCell.self, forCellReuseIdentifier: SearchResultTableViewCell.reuseID)
     }
+    
+    // Clears list of SearchItem results
+    func clearResults() {
+        searchItems = []
+    }
 
     // MARK: - UITableViewDataSource
 

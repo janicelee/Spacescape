@@ -55,11 +55,13 @@ class SearchViewController: UIViewController {
 extension SearchViewController: UISearchBarDelegate {
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        resultsTableViewController.searchItems = []
-        
         if let searchText = searchBar.text?.trimmingCharacters(in: .whitespacesAndNewlines) {
             getSearchResults(for: searchText)
         }
+    }
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        resultsTableViewController.clearResults()
     }
 }
 
