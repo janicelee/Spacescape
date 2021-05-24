@@ -12,7 +12,12 @@ struct SearchResult: Codable {
 }
 
 struct SearchCollection: Codable {
+    let metadata: Metadata
     let items: [SearchItem]
+}
+
+struct Metadata: Codable {
+    let totalHits: Int
 }
 
 struct SearchItem: Codable {

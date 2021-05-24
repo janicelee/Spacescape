@@ -11,6 +11,8 @@ class SearchViewController: UIViewController {
     
     private var searchController: UISearchController!
     private var resultsTableViewController: SearchResultsTableViewController!
+    private var searchText = ""
+    private var page = 1
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,13 +37,13 @@ class SearchViewController: UIViewController {
         navigationItem.hidesSearchBarWhenScrolling = false
     }
     
-    private func getSearchResults(for text: String) {
-        NASAClient.shared.search(for: text, page: 1) { [weak self] result in
+    private func getSearchResults(for text: String, page: Int) {
+        NASAClient.shared.search(for: text, page: page) { [weak self] result in
             guard let self = self else { return }
             
             switch result {
             case .success(let searchResult):
-                self.resultsTableViewController.setSearchItems(searchResult.collection.items) 
+                self.resultsTableViewController.appendResults(searchResult)
             case .failure(let error):
                 // TODO: handle error
                 print(error.rawValue)
@@ -56,12 +58,14 @@ extension SearchViewController: UISearchBarDelegate {
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         if let searchText = searchBar.text?.trimmingCharacters(in: .whitespacesAndNewlines) {
-            getSearchResults(for: searchText)
+            self.searchText = searchText
+            getSearchResults(for: searchText, page: page)
         }
     }
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         resultsTableViewController.clearResults()
+        page = 1
     }
 }
 
@@ -72,5 +76,10 @@ extension SearchViewController: SearchResultsTableViewControllerDelegate {
     func didSelectSearchItem(searchItem: SearchItem) {
         let infoViewController = InfoViewController(searchItem: searchItem)
         navigationController?.pushViewController(infoViewController, animated: true)
+    }
+    
+    func getNextPage() {
+        page += 1
+        getSearchResults(for: searchText, page: page)
     }
 }

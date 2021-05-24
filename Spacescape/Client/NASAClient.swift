@@ -125,4 +125,8 @@ class NASAClient {
             }
         }
     }
+    
+    func clearImageCache() {
+        cache.removeAllObjects()
+    }
 }
