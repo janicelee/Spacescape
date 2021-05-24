@@ -20,3 +20,9 @@ enum Layout {
     
     static let imageCornerRadius: CGFloat = 10
 }
+
+enum FontSize {
+    static let small: CGFloat = 14
+    static let medium: CGFloat = 16
+    static let large: CGFloat = 18
+}

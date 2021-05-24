@@ -12,8 +12,8 @@ class SearchResultTableViewCell: UITableViewCell {
     static let reuseID = "ResultCell"
     
     private let thumbnailImage = SearchResultImage(frame: .zero)
-    private let titleLabel = UILabel()
-    private let dateLabel = UILabel()
+    private let titleLabel = TitleLabel(fontSize: FontSize.medium)
+    private let dateLabel = SecondaryLabel(fontSize: FontSize.small)
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)

@@ -11,9 +11,9 @@ import SnapKit
 class InfoViewController: UIViewController {
     
     private let imageView = SearchResultImage(frame: .zero)
-    private let titlelabel = UILabel()
-    private let dateLabel = UILabel()
-    private let descriptionLabel = UILabel()
+    private let titlelabel = TitleLabel(fontSize: FontSize.large)
+    private let dateLabel = SecondaryLabel(fontSize: FontSize.medium)
+    private let descriptionLabel = BodyLabel(fontSize: FontSize.medium)
     
     private var searchItem: SearchItem!
     
@@ -29,23 +29,10 @@ class InfoViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
+        self.navigationItem.largeTitleDisplayMode = .never
         
-        NASAClient.shared.getImageURLs(from: searchItem.href) { [weak self] result in
-            guard let self = self else { return }
-
-            switch result {
-            case .success(let urls):
-                self.imageView.setImage(from: urls[0])
-            case .failure(let error):
-                // TODO: handle error
-                print(error.rawValue)
-            }
-        }
-        
-        titlelabel.text = searchItem.data[0].title
-        dateLabel.text = searchItem.data[0].dateCreated.convertToDisplayFormat()
-        descriptionLabel.text = searchItem.data[0].description
-        
+        getImage()
+        setLabels()
         configure()
     }
     
@@ -70,8 +57,29 @@ class InfoViewController: UIViewController {
         }
         
         descriptionLabel.snp.makeConstraints { make in
-            make.top.equalTo(dateLabel.snp.bottom).offset(Layout.mediumPadding)
+            make.top.equalTo(dateLabel.snp.bottom).offset(Layout.xLargePadding)
             make.leading.trailing.equalTo(dateLabel)
         }
+    }
+    
+    private func getImage() {
+        NASAClient.shared.getImageURLs(from: searchItem.href) { [weak self] result in
+            guard let self = self else { return }
+
+            switch result {
+            case .success(let urls):
+                self.imageView.setImage(from: urls[0])
+            case .failure(let error):
+                // TODO: handle error
+                print(error.rawValue)
+            }
+        }
+    }
+    
+    private func setLabels() {
+        let data = searchItem.data[0]
+        titlelabel.text = data.title
+        dateLabel.text = data.dateCreated.convertToDisplayFormat()
+        descriptionLabel.text = data.description
     }
 }
