@@ -13,6 +13,7 @@ protocol SearchResultsTableViewControllerDelegate: class {
 
 class SearchResultsTableViewController: UITableViewController {
     
+    weak var delegate: SearchResultsTableViewControllerDelegate?
     private var searchItems = [SearchItem]() {
         didSet {
             DispatchQueue.main.async {
@@ -20,7 +21,6 @@ class SearchResultsTableViewController: UITableViewController {
             }
         }
     }
-    weak var delegate: SearchResultsTableViewControllerDelegate?
     private let rowHeight: CGFloat = 134
 
     override func viewDidLoad() {
@@ -35,7 +35,7 @@ class SearchResultsTableViewController: UITableViewController {
     
     // Clears list of SearchItem results
     func clearResults() {
-        searchItems = []
+        searchItems.removeAll()
     }
 
     // MARK: - UITableViewDataSource
