@@ -39,8 +39,6 @@ class InfoViewController: UIViewController {
     private func configure() {
         [imageView, titlelabel, dateLabel, descriptionLabel].forEach(view.addSubview)
         
-        imageView.layer.cornerRadius = 0
-        
         imageView.snp.makeConstraints { make in
             make.top.leading.trailing.equalTo(view.safeAreaLayoutGuide)
             make.height.equalTo(280)

@@ -26,6 +26,8 @@ class SearchResultTableViewCell: UITableViewCell {
     
     private func configure() {
         [thumbnailImage, titleLabel, dateLabel].forEach(addSubview)
+        
+        thumbnailImage.layer.cornerRadius = Layout.imageCornerRadius
 
         thumbnailImage.snp.makeConstraints { make in
             make.top.leading.equalToSuperview().inset(Layout.largePadding)

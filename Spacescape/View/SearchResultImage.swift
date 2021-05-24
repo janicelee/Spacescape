@@ -19,7 +19,6 @@ class SearchResultImage: UIImageView {
     }
     
     private func configure() {
-        layer.cornerRadius = Layout.imageCornerRadius
         contentMode = .scaleAspectFill
         clipsToBounds = true
         image = Images.placeholder
