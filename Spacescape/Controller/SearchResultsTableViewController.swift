@@ -30,6 +30,7 @@ class SearchResultsTableViewController: UITableViewController {
         super.viewDidLoad()
         tableView.rowHeight = rowHeight
         tableView.register(SearchResultTableViewCell.self, forCellReuseIdentifier: SearchResultTableViewCell.reuseID)
+        tableView.separatorStyle = .none
     }
     
     func appendResults(_ searchResult: SearchResult) {
