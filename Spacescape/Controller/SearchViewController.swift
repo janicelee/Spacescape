@@ -80,6 +80,10 @@ extension SearchViewController: SearchResultsTableViewControllerDelegate {
     
     func getNextPage() {
         page += 1
-        getSearchResults(for: searchText, page: page)
+        
+        // Requests for pages > 100 returns error
+        if page <= 100 {
+            getSearchResults(for: searchText, page: page)
+        }
     }
 }
