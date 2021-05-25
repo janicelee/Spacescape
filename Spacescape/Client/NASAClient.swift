@@ -8,8 +8,8 @@
 import UIKit
 
 class NASAClient {
-    static let shared = NASAClient()
     
+    static let shared = NASAClient()
     private let cache = NSCache<NSString, UIImage>()
     private let baseURL = "https://images-api.nasa.gov"
     
@@ -66,18 +66,19 @@ class NASAClient {
                     decoder.dateDecodingStrategy = .iso8601
                     let searchResult = try decoder.decode(SearchResult.self, from: data)
                     completed(.success(searchResult))
-                } catch {
+                } catch let error {
+                    print(error)
                     completed(.failure(.unableToParse))
                 }
             case .failure(let error):
+                print("Error while sending search request for search text: \(searchText), page: \(page)")
                 completed(.failure(error))
             }
         }
     }
     
-    // Downloads image from given url
+    // Downloads image from given url string
     // Completion handler has void return since images have placeholders
-    
     func downloadImage(from urlString: String, completed: @escaping (UIImage) -> ()) {
         let cacheKey = NSString(string: urlString)
         
@@ -86,7 +87,10 @@ class NASAClient {
             return
         }
         
-        var urlComps = URLComponents(string: urlString)!
+        guard var urlComps = URLComponents(string: urlString) else {
+            print("Malformed URL")
+            return
+        }
         // Force all urls to use https
         urlComps.scheme = "https"
         
@@ -99,16 +103,18 @@ class NASAClient {
                 self.cache.setObject(image, forKey: cacheKey)
                 completed(image)
             case .failure(let error):
-                // TODO: handle error
                 print("Failed to download image from: \(urlString), error: \(error.rawValue)")
             }
         }
     }
     
-    // Retrieves image URLs for given collection 
-    
-    func getImageURLs(from urlString: String, completed: @escaping (Result<[String], NASAClientError>) -> ()) {
-        let urlComps = URLComponents(string: urlString)!
+    // Retrieves image URLs for given collection
+    func getImageURLs(from urlString: String, completed: @escaping ([String]) -> ()) {
+        
+        guard let urlComps = URLComponents(string: urlString) else {
+            print("Malformed URL")
+            return
+        }
         
         sendRequest(urlComponents: urlComps) { result in
             switch result {
@@ -116,12 +122,12 @@ class NASAClient {
                 do {
                     let decoder = JSONDecoder()
                     let imageLinks = try decoder.decode([String].self, from: data)
-                    completed(.success(imageLinks))
-                } catch {
-                    completed(.failure(.unableToParse))
+                    completed(imageLinks)
+                } catch let error {
+                    print(error)
                 }
             case .failure(let error):
-                completed(.failure(error))
+                print("Failed to get image URLS from: \(urlString), error: \(error)")
             }
         }
     }

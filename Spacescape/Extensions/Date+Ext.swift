@@ -8,6 +8,7 @@
 import Foundation
 
 extension Date {
+    
     func convertToDisplayFormat() -> String {
         let formatter = DateFormatter()
         formatter.locale = Locale.current

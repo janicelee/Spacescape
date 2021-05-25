@@ -49,11 +49,13 @@ class SearchResultTableViewCell: UITableViewCell {
 
     func set(_ searchItem: SearchItem) {
         let data = searchItem.data[0]
-        let thumbnailURL = searchItem.links[0].href
         
         titleLabel.text = data.title
         dateLabel.text = data.dateCreated.convertToDisplayFormat()
-        thumbnailImage.setImage(from: thumbnailURL)
+        
+        if searchItem.links.count > 0 {
+            thumbnailImage.setImage(from: searchItem.links[0].href)
+        }
     }
-
+    
 }

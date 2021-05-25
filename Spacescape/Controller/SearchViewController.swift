@@ -45,8 +45,8 @@ class SearchViewController: UIViewController {
             case .success(let searchResult):
                 self.resultsTableViewController.appendResults(searchResult)
             case .failure(let error):
-                // TODO: handle error
-                print(error.rawValue)
+                self.presentErrorAlertOnMainThread(message: ErrorMessage.generic)
+                print(error)
             }
         }
     }

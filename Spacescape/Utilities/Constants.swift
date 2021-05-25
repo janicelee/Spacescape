@@ -26,3 +26,7 @@ enum FontSize {
     static let medium: CGFloat = 16
     static let large: CGFloat = 18
 }
+
+enum ErrorMessage {
+    static let generic: String = "Oops! Something went wrong. Please try again later."
+}

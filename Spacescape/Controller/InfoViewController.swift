@@ -31,7 +31,7 @@ class InfoViewController: UIViewController {
         view.backgroundColor = .systemBackground
         self.navigationItem.largeTitleDisplayMode = .never
         
-        getImage()
+        setImage()
         setLabels()
         configure()
     }
@@ -60,16 +60,12 @@ class InfoViewController: UIViewController {
         }
     }
     
-    private func getImage() {
-        NASAClient.shared.getImageURLs(from: searchItem.href) { [weak self] result in
+    private func setImage() {
+        NASAClient.shared.getImageURLs(from: searchItem.href) { [weak self] urls in
             guard let self = self else { return }
-
-            switch result {
-            case .success(let urls):
+            
+            if urls.count > 0 {
                 self.imageView.setImage(from: urls[0])
-            case .failure(let error):
-                // TODO: handle error
-                print(error.rawValue)
             }
         }
     }
