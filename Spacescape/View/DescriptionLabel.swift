@@ -1,5 +1,5 @@
 //
-//  SecondaryLabel.swift
+//  DescriptionLabel.swift
 //  Spacescape
 //
 //  Created by Janice Lee on 2021-05-24.
@@ -7,8 +7,8 @@
 
 import UIKit
 
-class SecondaryLabel: UILabel {
-    
+class DescriptionLabel: UILabel {
+
     override init(frame: CGRect) {
         super.init(frame: frame)
         configure()
@@ -24,9 +24,7 @@ class SecondaryLabel: UILabel {
     }
     
     private func configure() {
-        textColor = .secondaryLabel
-        adjustsFontSizeToFitWidth = true
-        minimumScaleFactor = 0.90
-        lineBreakMode = .byTruncatingTail
+        textColor = .label
+        numberOfLines = 0
     }
 }

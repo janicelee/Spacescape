@@ -10,8 +10,8 @@
 		5B67B806DDECB6997257B62F /* Pods_Spacescape.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1ECF17F7E2C3488A2F6A892F /* Pods_Spacescape.framework */; };
 		F74D8A6F265A41B900A3777C /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F74D8A6E265A41B900A3777C /* SearchViewController.swift */; };
 		F78C1EF4265B87E700337FF9 /* TitleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F78C1EF3265B87E700337FF9 /* TitleLabel.swift */; };
-		F78C1EF7265B8ACB00337FF9 /* SecondaryLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F78C1EF6265B8ACB00337FF9 /* SecondaryLabel.swift */; };
-		F78C1EFA265B8CEC00337FF9 /* BodyLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F78C1EF9265B8CEC00337FF9 /* BodyLabel.swift */; };
+		F78C1EF7265B8ACB00337FF9 /* DateLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F78C1EF6265B8ACB00337FF9 /* DateLabel.swift */; };
+		F78C1EFA265B8CEC00337FF9 /* DescriptionLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F78C1EF9265B8CEC00337FF9 /* DescriptionLabel.swift */; };
 		F78C1EFD265C69D300337FF9 /* UIViewController+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = F78C1EFC265C69D300337FF9 /* UIViewController+Ext.swift */; };
 		F7D64CC7265906770043BED2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7D64CC6265906770043BED2 /* AppDelegate.swift */; };
 		F7D64CC9265906770043BED2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7D64CC8265906770043BED2 /* SceneDelegate.swift */; };
@@ -34,8 +34,8 @@
 		B894CC2CCB4EC78DA5A473AE /* Pods-Spacescape.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Spacescape.debug.xcconfig"; path = "Target Support Files/Pods-Spacescape/Pods-Spacescape.debug.xcconfig"; sourceTree = "<group>"; };
 		F74D8A6E265A41B900A3777C /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		F78C1EF3265B87E700337FF9 /* TitleLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleLabel.swift; sourceTree = "<group>"; };
-		F78C1EF6265B8ACB00337FF9 /* SecondaryLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondaryLabel.swift; sourceTree = "<group>"; };
-		F78C1EF9265B8CEC00337FF9 /* BodyLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BodyLabel.swift; sourceTree = "<group>"; };
+		F78C1EF6265B8ACB00337FF9 /* DateLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateLabel.swift; sourceTree = "<group>"; };
+		F78C1EF9265B8CEC00337FF9 /* DescriptionLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DescriptionLabel.swift; sourceTree = "<group>"; };
 		F78C1EFC265C69D300337FF9 /* UIViewController+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Ext.swift"; sourceTree = "<group>"; };
 		F7D64CC3265906770043BED2 /* Spacescape.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Spacescape.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F7D64CC6265906770043BED2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -130,8 +130,8 @@
 				F7D64CFA26590CC70043BED2 /* SearchResultImage.swift */,
 				F7ED2BFA2659B85E00590B72 /* SearchResultTableViewCell.swift */,
 				F78C1EF3265B87E700337FF9 /* TitleLabel.swift */,
-				F78C1EF6265B8ACB00337FF9 /* SecondaryLabel.swift */,
-				F78C1EF9265B8CEC00337FF9 /* BodyLabel.swift */,
+				F78C1EF6265B8ACB00337FF9 /* DateLabel.swift */,
+				F78C1EF9265B8CEC00337FF9 /* DescriptionLabel.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -308,10 +308,10 @@
 				F7D64CE826590A2A0043BED2 /* NASAClientError.swift in Sources */,
 				F7D64CFE26590CE70043BED2 /* Constants.swift in Sources */,
 				F7ED2BFB2659B85E00590B72 /* SearchResultTableViewCell.swift in Sources */,
-				F78C1EFA265B8CEC00337FF9 /* BodyLabel.swift in Sources */,
+				F78C1EFA265B8CEC00337FF9 /* DescriptionLabel.swift in Sources */,
 				F7ED2C0F2659CDE300590B72 /* Date+Ext.swift in Sources */,
 				F78C1EFD265C69D300337FF9 /* UIViewController+Ext.swift in Sources */,
-				F78C1EF7265B8ACB00337FF9 /* SecondaryLabel.swift in Sources */,
+				F78C1EF7265B8ACB00337FF9 /* DateLabel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

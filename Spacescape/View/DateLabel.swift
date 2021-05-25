@@ -1,5 +1,5 @@
 //
-//  BodyLabel.swift
+//  DateLabel.swift
 //  Spacescape
 //
 //  Created by Janice Lee on 2021-05-24.
@@ -7,8 +7,8 @@
 
 import UIKit
 
-class BodyLabel: UILabel {
-
+class DateLabel: UILabel {
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         configure()
@@ -24,7 +24,9 @@ class BodyLabel: UILabel {
     }
     
     private func configure() {
-        textColor = .label
-        numberOfLines = 0
+        textColor = .secondaryLabel
+        adjustsFontSizeToFitWidth = true
+        minimumScaleFactor = 0.90
+        lineBreakMode = .byTruncatingTail
     }
 }

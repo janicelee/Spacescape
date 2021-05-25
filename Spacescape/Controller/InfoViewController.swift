@@ -12,8 +12,8 @@ class InfoViewController: UIViewController {
     
     private let imageView = SearchResultImage(frame: .zero)
     private let titlelabel = TitleLabel(fontSize: FontSize.large)
-    private let dateLabel = SecondaryLabel(fontSize: FontSize.medium)
-    private let descriptionLabel = BodyLabel(fontSize: FontSize.medium)
+    private let dateLabel = DateLabel(fontSize: FontSize.medium)
+    private let descriptionLabel = DescriptionLabel(fontSize: FontSize.medium)
     
     private var searchItem: SearchItem!
     

@@ -13,7 +13,7 @@ class SearchResultTableViewCell: UITableViewCell {
     
     private let thumbnailImage = SearchResultImage(frame: .zero)
     private let titleLabel = TitleLabel(fontSize: FontSize.medium)
-    private let dateLabel = SecondaryLabel(fontSize: FontSize.small)
+    private let dateLabel = DateLabel(fontSize: FontSize.small)
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
