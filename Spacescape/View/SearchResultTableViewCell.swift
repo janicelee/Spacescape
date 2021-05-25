@@ -58,4 +58,7 @@ class SearchResultTableViewCell: UITableViewCell {
         }
     }
     
+    func setImageToPlaceholder() {
+        thumbnailImage.setImageToPlaceholder()
+    }
 }

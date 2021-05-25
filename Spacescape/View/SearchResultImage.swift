@@ -21,7 +21,7 @@ class SearchResultImage: UIImageView {
     private func configure() {
         contentMode = .scaleAspectFill
         clipsToBounds = true
-        image = Images.placeholder
+        setImageToPlaceholder()
     }
     
     func setImage(from urlString: String) {
@@ -32,5 +32,9 @@ class SearchResultImage: UIImageView {
                 self.image = image
             }
         }
+    }
+    
+    func setImageToPlaceholder() {
+        image = Images.placeholder
     }
 }

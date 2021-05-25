@@ -68,4 +68,9 @@ class SearchResultsTableViewController: UITableViewController {
         let searchItem = searchItems[indexPath.row]
         delegate?.didSelectSearchItem(searchItem: searchItem)
     }
+    
+    override func tableView(_ tableView: UITableView, didEndDisplaying cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        let cell = cell as! SearchResultTableViewCell
+        cell.setImageToPlaceholder()
+    }
 }
