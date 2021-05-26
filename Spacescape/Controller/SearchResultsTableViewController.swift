@@ -17,11 +17,10 @@ class SearchResultsTableViewController: UITableViewController {
     private let rowHeight: CGFloat = 134
     
     private var totalHits = 0
-    weak var delegate: SearchResultsTableViewControllerDelegate?
-    
     private var searchItems = [SearchItem]() {
         didSet { updateUI() }
     }
+    weak var delegate: SearchResultsTableViewControllerDelegate?
 
     override func viewDidLoad() {
         super.viewDidLoad()

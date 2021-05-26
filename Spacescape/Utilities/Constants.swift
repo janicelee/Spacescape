@@ -17,7 +17,7 @@ enum Layout {
     static let smallPadding: CGFloat = 6
     static let mediumPadding: CGFloat = 10
     static let largePadding: CGFloat = 12
-    static let xLargePadding: CGFloat = 16
+    static let xLargePadding: CGFloat = 18
 }
 
 enum FontSize {

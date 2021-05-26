@@ -46,13 +46,13 @@ class InfoViewController: UIViewController {
         
         imageView.snp.makeConstraints { make in
             make.top.equalToSuperview()
-            make.leading.trailing.equalTo(view)
+            make.width.equalTo(view.frame.width)
             make.height.equalTo(280)
         }
         
         titlelabel.snp.makeConstraints { make in
             make.top.equalTo(imageView.snp.bottom).offset(Layout.largePadding)
-            make.leading.trailing.equalTo(view).inset(Layout.xLargePadding)
+            make.leading.trailing.equalTo(imageView).inset(Layout.xLargePadding)
         }
         
         dateLabel.snp.makeConstraints { make in
