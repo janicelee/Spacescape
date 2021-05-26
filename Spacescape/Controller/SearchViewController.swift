@@ -8,7 +8,6 @@
 import UIKit
 
 class SearchViewController: UIViewController {
-    
     private var searchController: UISearchController!
     private var resultsTableViewController: SearchResultsTableViewController!
     private var searchText = ""
@@ -81,7 +80,7 @@ extension SearchViewController: SearchResultsTableViewControllerDelegate {
     func getNextPage() {
         page += 1
         
-        // Requests for pages > 100 returns error
+        // Only allow requests for pages <= 100, since pages above 100 return an error
         if page <= 100 {
             getSearchResults(for: searchText, page: page)
         }
