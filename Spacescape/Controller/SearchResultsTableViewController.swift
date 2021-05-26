@@ -13,7 +13,6 @@ protocol SearchResultsTableViewControllerDelegate: class {
 }
 
 class SearchResultsTableViewController: UITableViewController {
-    
     private let rowHeight: CGFloat = 134
     
     weak var delegate: SearchResultsTableViewControllerDelegate?

@@ -9,7 +9,6 @@ import UIKit
 import SnapKit
 
 class InfoViewController: UIViewController {
-    
     private let imageView = SearchResultImage(frame: .zero)
     private let titlelabel = TitleLabel(fontSize: FontSize.large)
     private let dateLabel = DateLabel(fontSize: FontSize.medium)
@@ -28,15 +27,15 @@ class InfoViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .systemBackground
-        self.navigationItem.largeTitleDisplayMode = .never
-        
+        configure()
         setImage()
         setLabels()
-        configure()
     }
     
     private func configure() {
+        view.backgroundColor = .systemBackground
+        self.navigationItem.largeTitleDisplayMode = .never
+        
         [imageView, titlelabel, dateLabel, descriptionLabel].forEach(view.addSubview)
         
         imageView.snp.makeConstraints { make in
@@ -71,9 +70,11 @@ class InfoViewController: UIViewController {
     }
     
     private func setLabels() {
-        let data = searchItem.data[0]
-        titlelabel.text = data.title
-        dateLabel.text = data.dateCreated.convertToDisplayFormat()
-        descriptionLabel.text = data.description
+        if searchItem.data.count > 0 {
+            let data = searchItem.data[0]
+            titlelabel.text = data.title
+            dateLabel.text = data.dateCreated.convertToDisplayFormat()
+            descriptionLabel.text = data.description
+        }
     }
 }
