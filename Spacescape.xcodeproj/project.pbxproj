@@ -127,11 +127,9 @@
 		F7D64CDD265908C80043BED2 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				F7D64CFA26590CC70043BED2 /* SearchResultImage.swift */,
-				F7ED2BFA2659B85E00590B72 /* SearchResultTableViewCell.swift */,
-				F78C1EF3265B87E700337FF9 /* TitleLabel.swift */,
-				F78C1EF6265B8ACB00337FF9 /* DateLabel.swift */,
-				F78C1EF9265B8CEC00337FF9 /* DescriptionLabel.swift */,
+				F7DAB0DE265E050B00A95082 /* Cells */,
+				F7DAB0DF265E051400A95082 /* ImageViews */,
+				F7DAB0DD265E04F300A95082 /* Labels */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -172,6 +170,32 @@
 				F7D64CE326590A0E0043BED2 /* NASAClient.swift */,
 			);
 			path = Client;
+			sourceTree = "<group>";
+		};
+		F7DAB0DD265E04F300A95082 /* Labels */ = {
+			isa = PBXGroup;
+			children = (
+				F78C1EF3265B87E700337FF9 /* TitleLabel.swift */,
+				F78C1EF6265B8ACB00337FF9 /* DateLabel.swift */,
+				F78C1EF9265B8CEC00337FF9 /* DescriptionLabel.swift */,
+			);
+			path = Labels;
+			sourceTree = "<group>";
+		};
+		F7DAB0DE265E050B00A95082 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				F7ED2BFA2659B85E00590B72 /* SearchResultTableViewCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		F7DAB0DF265E051400A95082 /* ImageViews */ = {
+			isa = PBXGroup;
+			children = (
+				F7D64CFA26590CC70043BED2 /* SearchResultImage.swift */,
+			);
+			path = ImageViews;
 			sourceTree = "<group>";
 		};
 		F7ED2C002659CBE900590B72 /* Extensions */ = {
