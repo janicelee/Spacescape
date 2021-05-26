@@ -13,23 +13,50 @@ protocol SearchResultsTableViewControllerDelegate: class {
 }
 
 class SearchResultsTableViewController: UITableViewController {
+    private let emptyStateLabel = UILabel()
     private let rowHeight: CGFloat = 134
+    
     private var totalHits = 0
     weak var delegate: SearchResultsTableViewControllerDelegate?
     
     private var searchItems = [SearchItem]() {
-        didSet {
-            DispatchQueue.main.async {
-                self.tableView.reloadData()
-            }
-        }
+        didSet { updateUI() }
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        configure()
+    }
+    
+    private func configure() {
         tableView.rowHeight = rowHeight
         tableView.register(SearchResultTableViewCell.self, forCellReuseIdentifier: SearchResultTableViewCell.reuseID)
         tableView.separatorStyle = .none
+        
+        view.addSubview(emptyStateLabel)
+        emptyStateLabel.text = "No results to display"
+        emptyStateLabel.font = UIFont.systemFont(ofSize: FontSize.large, weight: .light)
+        
+        let padding: CGFloat = 50
+        
+        emptyStateLabel.snp.makeConstraints { make in
+            make.top.equalTo(view.safeAreaLayoutGuide).offset(padding)
+            make.centerX.equalToSuperview()
+        }
+    }
+    
+    private func updateUI() {
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
+            
+            if self.searchItems.isEmpty {
+                UIView.transition(with: self.emptyStateLabel, duration: 0.3, options: .transitionCrossDissolve) {
+                    self.emptyStateLabel.isHidden = false
+                }
+            } else {
+                self.emptyStateLabel.isHidden = true
+            }
+        }
     }
     
     func appendResults(_ searchResult: SearchResult) {
@@ -54,7 +81,7 @@ class SearchResultsTableViewController: UITableViewController {
         let result = searchItems[indexPath.row]
         cell.set(result)
         
-        // When user gets near the end, call on delegate to fetch the next page of results
+        // When user gets near the end of the list, call on delegate to fetch the next page of results
         if indexPath.row == searchItems.count - 4 && searchItems.count < totalHits {
             delegate?.getNextPage()
         }
