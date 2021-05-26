@@ -14,8 +14,9 @@ protocol SearchResultsTableViewControllerDelegate: class {
 
 class SearchResultsTableViewController: UITableViewController {
     private let rowHeight: CGFloat = 134
-    
+    private var totalHits = 0
     weak var delegate: SearchResultsTableViewControllerDelegate?
+    
     private var searchItems = [SearchItem]() {
         didSet {
             DispatchQueue.main.async {
@@ -23,7 +24,6 @@ class SearchResultsTableViewController: UITableViewController {
             }
         }
     }
-    private var totalHits = 0
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,7 +37,7 @@ class SearchResultsTableViewController: UITableViewController {
         self.totalHits = searchResult.collection.metadata.totalHits
     }
     
-    // Clears list of SearchItem results
+    // Clears list of results
     func clearResults() {
         searchItems.removeAll()
         NASAClient.shared.clearImageCache()

@@ -27,12 +27,15 @@ class SearchResultTableViewCell: UITableViewCell {
     private func configure() {
         [thumbnailImage, titleLabel, dateLabel].forEach(addSubview)
         
+        let width: CGFloat = 150
+        let height: CGFloat = 110
+        
         thumbnailImage.layer.cornerRadius = Layout.imageCornerRadius
 
         thumbnailImage.snp.makeConstraints { make in
             make.top.leading.equalToSuperview().inset(Layout.largePadding)
-            make.width.equalTo(150)
-            make.height.equalTo(110)
+            make.width.equalTo(width)
+            make.height.equalTo(height)
         }
         
         titleLabel.snp.makeConstraints { make in
@@ -48,10 +51,11 @@ class SearchResultTableViewCell: UITableViewCell {
     }
 
     func set(_ searchItem: SearchItem) {
-        let data = searchItem.data[0]
-        
-        titleLabel.text = data.title
-        dateLabel.text = data.dateCreated.convertToDisplayFormat()
+        if searchItem.data.count > 0 {
+            let data = searchItem.data[0]
+            titleLabel.text = data.title
+            dateLabel.text = data.dateCreated.convertToDisplayFormat()
+        }
         
         if searchItem.links.count > 0 {
             thumbnailImage.setImage(from: searchItem.links[0].href)
