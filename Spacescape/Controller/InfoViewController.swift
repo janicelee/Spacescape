@@ -9,6 +9,7 @@ import UIKit
 import SnapKit
 
 class InfoViewController: UIViewController {
+    private let scrollView = UIScrollView()
     private let imageView = SearchResultImage(frame: .zero)
     private let titlelabel = TitleLabel(fontSize: FontSize.large)
     private let dateLabel = DateLabel(fontSize: FontSize.medium)
@@ -36,16 +37,22 @@ class InfoViewController: UIViewController {
         view.backgroundColor = .systemBackground
         self.navigationItem.largeTitleDisplayMode = .never
         
-        [imageView, titlelabel, dateLabel, descriptionLabel].forEach(view.addSubview)
+        view.addSubview(scrollView)
+        [imageView, titlelabel, dateLabel, descriptionLabel].forEach(scrollView.addSubview)
+        
+        scrollView.snp.makeConstraints { make in
+            make.top.bottom.leading.trailing.equalToSuperview()
+        }
         
         imageView.snp.makeConstraints { make in
-            make.top.leading.trailing.equalTo(view.safeAreaLayoutGuide)
+            make.top.equalToSuperview()
+            make.leading.trailing.equalTo(view)
             make.height.equalTo(280)
         }
         
         titlelabel.snp.makeConstraints { make in
             make.top.equalTo(imageView.snp.bottom).offset(Layout.largePadding)
-            make.leading.trailing.equalToSuperview().inset(Layout.xLargePadding)
+            make.leading.trailing.equalTo(view).inset(Layout.xLargePadding)
         }
         
         dateLabel.snp.makeConstraints { make in
@@ -56,6 +63,7 @@ class InfoViewController: UIViewController {
         descriptionLabel.snp.makeConstraints { make in
             make.top.equalTo(dateLabel.snp.bottom).offset(Layout.xLargePadding)
             make.leading.trailing.equalTo(dateLabel)
+            make.bottom.equalToSuperview().inset(Layout.largePadding)
         }
     }
     
