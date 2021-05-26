@@ -61,7 +61,7 @@ class InfoViewController: UIViewController {
     }
     
     private func setImage() {
-        NASAClient.shared.getImageURLs(from: searchItem.href) { [weak self] urls in
+        NASAClient.shared.unpackImageCollection(from: searchItem.href) { [weak self] urls in
             guard let self = self else { return }
             
             if urls.count > 0 {

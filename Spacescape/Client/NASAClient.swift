@@ -8,7 +8,6 @@
 import UIKit
 
 class NASAClient {
-    
     static let shared = NASAClient()
     private let cache = NSCache<NSString, UIImage>()
     private let baseURL = "https://images-api.nasa.gov"
@@ -22,7 +21,8 @@ class NASAClient {
         }
         
         let task = URLSession.shared.dataTask(with: url) { data, response, error in
-            if let _ = error {
+            if let error = error {
+                print(error)
                 completed(.failure(.unableToCompleteRequest))
                 return
             }
@@ -77,7 +77,7 @@ class NASAClient {
         }
     }
     
-    // Downloads image from given url string
+    // Downloads image from given URL string
     // Completion handler has void return since images have placeholders
     func downloadImage(from urlString: String, completed: @escaping (UIImage) -> ()) {
         let cacheKey = NSString(string: urlString)
@@ -91,6 +91,7 @@ class NASAClient {
             print("Malformed URL")
             return
         }
+        
         // Force all urls to use https
         urlComps.scheme = "https"
         
@@ -108,9 +109,8 @@ class NASAClient {
         }
     }
     
-    // Retrieves image URLs for given collection
-    func getImageURLs(from urlString: String, completed: @escaping ([String]) -> ()) {
-        
+    // Unpacks image collection.json URI found in SearchItem.href
+    func unpackImageCollection(from urlString: String, completed: @escaping ([String]) -> ()) {
         guard let urlComps = URLComponents(string: urlString) else {
             print("Malformed URL")
             return
