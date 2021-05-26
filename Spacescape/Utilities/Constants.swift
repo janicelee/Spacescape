@@ -12,13 +12,12 @@ enum Images {
 }
 
 enum Layout {
+    static let imageCornerRadius: CGFloat = 8
     static let xsPadding: CGFloat = 2
     static let smallPadding: CGFloat = 6
     static let mediumPadding: CGFloat = 10
     static let largePadding: CGFloat = 12
     static let xLargePadding: CGFloat = 16
-    
-    static let imageCornerRadius: CGFloat = 8
 }
 
 enum FontSize {
